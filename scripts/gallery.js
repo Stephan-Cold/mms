@@ -33,70 +33,71 @@ function handleURLParameters() {
 const galleryData = {
     studio: {
         'kids-birthdays': [
-            'https://images.pexels.com/photos/1620760/pexels-photo-1620760.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1620843/pexels-photo-1620843.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1167021/pexels-photo-1167021.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1620766/pexels-photo-1620766.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1620773/pexels-photo-1620773.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1692693/pexels-photo-1692693.jpeg?auto=compress&cs=tinysrgb&w=600'
+            'images/kb/child-birthday-party-photography-newcastle-02.jpg',
+            'images/kb/fun-kids-birthday-photo-session-newcastle-04.jpg',
+            'images/kb/kids-birthday-cake-smash-newcastle-03.jpg',
+            'images/kb/kids-birthday-photoshoot-newcastle-moment-maker-studios-01.jpg',
+            'images/kb/kids-birthday-portrait-newcastle-photographer-05.jpg',
+            'images/kb/moment-maker-studios-kids-birthday-gallery-06.jpg'
         ],
         'adult-birthdays': [
-            'https://images.pexels.com/photos/1729931/pexels-photo-1729931.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1729932/pexels-photo-1729932.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1405963/pexels-photo-1405963.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1729933/pexels-photo-1729933.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/2072453/pexels-photo-2072453.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1405461/pexels-photo-1405461.jpeg?auto=compress&cs=tinysrgb&w=600'
+            'images/ab/adult-birthday-party-photography-newcastle-07.jpg',
+            'images/ab/adult-birthday-photo-session-kwa-zulu-natal-09.jpg',
+            'images/ab/angel-birthday.jpg',
+            'images/ab/glamorous-adult-birthday-photoshoot-newcastle-11.jpg',
+            'images/ab/professional-adult-birthday-photography-newcastle-10.jpg',
+            'images/ab/studio-adult-birthday-photoshoot-newcastle-08.jpg'
         ],
         'maternity': [
-            'https://images.pexels.com/photos/1556592/pexels-photo-1556592.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1556598/pexels-photo-1556598.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1556674/pexels-photo-1556674.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1556691/pexels-photo-1556691.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1556701/pexels-photo-1556701.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1556707/pexels-photo-1556707.jpeg?auto=compress&cs=tinysrgb&w=600'
+            'images/m/beautiful-pregnancy-photos-newcastle.jpg',
+            'images/m/expecting-mother-photoshoot-newcastle.jpg',
+            'images/m/maternity-photoshoot-newcastle-kwazulu-natal.jpg',
+            'images/m/maternity-portrait-session-newcastle.jpg',
+            'images/m/photography-pregnancy-newcastle.jpg',
+            'images/m/pregnancy-photography-newcastle-studio.jpg'
         ],
         'casual': [
-            'https://images.pexels.com/photos/1043458/pexels-photo-1043458.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1382734/pexels-photo-1382734.jpeg?auto=compress&cs=tinysrgb&w=600'
+            'images/c/candid-casual-shoot-newcastle-06.jpg',
+            'images/c/casual-photo-session-newcastle-04.jpg',
+            'images/c/casual-photography-newcastle-02.jpg',
+            'images/c/casual-photoshoot-newcastle-kzn-01.jpg',
+            'images/c/lifestyle-photography-newcastle-kzn-05.jpg',
+            'images/c/relaxed-photoshoot-newcastle-03.jpg'
+            
         ]
     },
     outdoor: {
         'weddings': [
-            'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1488315/pexels-photo-1488315.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1729931/pexels-photo-1729931.jpeg?auto=compress&cs=tinysrgb&w=600'
+            'images/w/moment-maker-studios-wedding-ceremony-newcastle-kzn.jpg',
+            'images/w/newcastle-kzn-wedding-reception-photography.jpg',
+            'images/w/outdoor-wedding-photography-newcastle-kzn.jpg',
+            'images/w/wedding-photography-newcastle-kwazulu-natal-thumbnail-01.jpg',
+            'images/w/wedding-photography-newcastle-kzn-bride-groom.jpg',
+            'images/w/wedding-portrait-bride-newcastle-kzn.jpg'
         ],
         'matric-dance': [
-            'https://images.pexels.com/photos/1043458/pexels-photo-1043458.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1382734/pexels-photo-1382734.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1488315/pexels-photo-1488315.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=600'
+            'images/md/elegant-matric-dance-photos-newcastle-06.jpg',
+            'images/md/matric-dance-couple-photography-newcastle-05.jpg',
+            'images/md/matric-dance-photography-newcastle-kzn-01.jpg',
+            'images/md/matric-dance-portraits-newcastle-03.jpg',
+            'images/md/moment-maker-studios-matric-dance-04.jpg',
+            'images/md/newcastle-matric-dance-photoshoot-02.jpg'
         ],
         'traditional': [
-            'https://images.pexels.com/photos/1043458/pexels-photo-1043458.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1382734/pexels-photo-1382734.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1488315/pexels-photo-1488315.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=600'
+            'images/tc/kwazulu-natal-cultural-wedding-photography-04.jpg',
+            'images/tc/moment-maker-studios-traditional-ceremony-05.jpg',
+            'images/tc/moment-maker-studios-wedding-ring-exchange-newcastle.jpg',
+            'images/tc/south-african-traditional-wedding-photography-06.jpg',
+            'images/tc/traditional-ceremony-photography-newcastle-kwazulu-natal-01.jpg',
+            'images/tc/zulu-traditional-wedding-photographer-newcastle-02.jpg'
         ],
         'outdoor-birthdays': [
-            'https://images.pexels.com/photos/1620760/pexels-photo-1620760.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1620843/pexels-photo-1620843.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1167021/pexels-photo-1167021.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1692693/pexels-photo-1692693.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1729931/pexels-photo-1729931.jpeg?auto=compress&cs=tinysrgb&w=600',
-            'https://images.pexels.com/photos/1405963/pexels-photo-1405963.jpeg?auto=compress&cs=tinysrgb&w=600'
+            'images\o\adult-birthday-celebration-photography-newcastle-02.jpg',
+            'images\o\adult-birthday-event-photographer-newcastle-04.jpg',
+            'images\o\adult-birthday-photoshoot-newcastle-01.jpg',
+            'images\o\elegant-adult-birthday-photoshoot-kzn-05.jpg',
+            'images\o\milestone-birthday-celebration-photography-newcastle-06.jpg',
+            'images\o\newcastle-adult-birthday-portrait-03.jpg'
         ]
     }
 };
