@@ -92,12 +92,12 @@ const galleryData = {
             'images/tc/zulu-traditional-wedding-photographer-newcastle-02.jpg'
         ],
         'outdoor-birthdays': [
-            'images\o\adult-birthday-celebration-photography-newcastle-02.jpg',
-            'images\o\adult-birthday-event-photographer-newcastle-04.jpg',
-            'images\o\adult-birthday-photoshoot-newcastle-01.jpg',
-            'images\o\elegant-adult-birthday-photoshoot-kzn-05.jpg',
-            'images\o\milestone-birthday-celebration-photography-newcastle-06.jpg',
-            'images\o\newcastle-adult-birthday-portrait-03.jpg'
+            'images/o/adult-birthday-celebration-photography-newcastle-02.jpg',
+            'images/o/adult-birthday-event-photographer-newcastle-04.jpg',
+            'images/o/adult-birthday-photoshoot-newcastle-01.jpg',
+            'images/o/elegant-adult-birthday-photoshoot-kzn-05.jpg',
+            'images/o/milestone-birthday-celebration-photography-newcastle-06.jpg',
+            'images/o/newcastle-adult-birthday-portrait-03.jpg'
         ]
     }
 };
