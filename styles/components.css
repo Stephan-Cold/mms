@@ -230,6 +230,26 @@
     margin-top: 3rem;
 }
 
+.service-card.weddings {
+  background-image: url('images/t/wedding-photography-newcastle-kwazulu-natal-thumbnail-01.jpg');
+}
+
+.service-card.maternity {
+  background-image: url('images/t/maternity-photoshoot-newcastle-kwazulu-natal-thumbnail-01.jpg');
+}
+
+.service-card.birthdays {
+  background-image: url('images/t/birthday-photoshoot-newcastle-kwazulu-natal-thumbnail-01.jpg');
+}
+
+.service-card.matric-dance {
+  background-image: url('images/t/matric-dance-newcastle-thumbnail.jpg');
+}
+
+.service-card.traditional {
+  background-image: url('images/t/zulu-traditional-wedding-photographer-thumbnail-02.jpg');
+}
+
 .service-card {
     background: #fff;
     padding: 2.5rem 2rem;
