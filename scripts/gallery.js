@@ -49,11 +49,11 @@ const galleryData = {
             'images/ab/studio-adult-birthday-photoshoot-newcastle-08.jpg'
         ],
         'maternity': [
+            'images/m/photography-pregnancy-newcastle.jpg',
             'images/m/beautiful-pregnancy-photos-newcastle.jpg',
-            'images/m/expecting-mother-photoshoot-newcastle.jpg',
             'images/m/maternity-photoshoot-newcastle-kwazulu-natal.jpg',
             'images/m/maternity-portrait-session-newcastle.jpg',
-            'images/m/photography-pregnancy-newcastle.jpg',
+            'images/m/expecting-mother-photoshoot-newcastle.jpg',
             'images/m/pregnancy-photography-newcastle-studio.jpg'
         ],
         'casual': [
