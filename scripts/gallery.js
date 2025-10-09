@@ -388,3 +388,17 @@ window.Gallery = {
     previousImage,
     nextImage
 };
+
+/* === OMEDIA: Add-on: accept programmatic category selection ===
+   This is only a safety net. If your existing code listens to .category-btn
+   and .subcategory-btn clicks (which we’re simulating), you may not even need this.
+*/
+window.MMS_selectGallery = function (category, subcategory) {
+  // Try to click the legacy controls (keeps existing code paths)
+  const catBtn = document.querySelector(`.category-btn[data-category="${category}"]`);
+  if (catBtn) catBtn.click();
+
+  const subBtn = document.querySelector(`#${category}-subcategories .subcategory-btn[data-subcategory="${subcategory}"]`);
+  if (subBtn) subBtn.click();
+};
+
