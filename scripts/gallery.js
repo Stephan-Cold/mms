@@ -1,4 +1,6 @@
-// Gallery functionality
+// === Moment Maker Studios Gallery Script ===
+
+// Initialize gallery on DOM ready
 document.addEventListener('DOMContentLoaded', function() {
     initializeGallery();
     handleURLParameters();
@@ -10,26 +12,16 @@ function handleURLParameters() {
     const subcategory = urlParams.get('subcategory');
     
     if (category && subcategory) {
-        // Wait a moment for the gallery to initialize
         setTimeout(() => {
-            // Click the appropriate category button
-            const categoryBtn = document.querySelector(`[data-category="${category}"]`);
-            if (categoryBtn) {
-                categoryBtn.click();
-                
-                // Wait for category to load, then click subcategory
-                setTimeout(() => {
-                    const subcategoryBtn = document.querySelector(`[data-subcategory="${subcategory}"]`);
-                    if (subcategoryBtn) {
-                        subcategoryBtn.click();
-                    }
-                }, 300);
+            const categoryCard = document.querySelector(`.category-card[data-category="${category}"][data-subcategory="${subcategory}"]`);
+            if (categoryCard) {
+                categoryCard.click();
             }
-        }, 100);
+        }, 200);
     }
 }
 
-// Gallery data structure
+// === Gallery Data ===
 const galleryData = {
     studio: {
         'kids-birthdays': [
@@ -63,7 +55,6 @@ const galleryData = {
             'images/c/casual-photoshoot-newcastle-kzn-01.jpg',
             'images/c/lifestyle-photography-newcastle-kzn-05.jpg',
             'images/c/relaxed-photoshoot-newcastle-03.jpg'
-            
         ]
     },
     outdoor: {
@@ -155,8 +146,7 @@ const galleryData = {
             'images/fo/zulu-traditional-celebration-photography-30.jpg',
             'images/fo/zulu-traditional-ceremony-newcastle-outdoors-02.jpg',
             'images/fo/zulu-traditional-event-photography-21.jpg',
-            'images/fo/zulu-traditional-wedding-photography-kzn-15.jpg',
-
+            'images/fo/zulu-traditional-wedding-photography-kzn-15.jpg'
         ]
     }
 };
@@ -164,42 +154,63 @@ const galleryData = {
 let currentImages = [];
 let currentImageIndex = 0;
 
+// === Initialize the gallery ===
 function initializeGallery() {
     setupCategoryButtons();
     setupSubcategoryButtons();
     setupLightbox();
-    
-    // Load initial category
+    setupCategoryCards(); // Added for the new UI
+
+    // Default initial load
     loadGalleryImages('studio', 'kids-birthdays');
 }
 
+// === New: Category Card Handling (the visible tiles) ===
+function setupCategoryCards() {
+    const categoryCards = document.querySelectorAll('.category-card');
+    const galleryGridSection = document.getElementById('gallery-grid-section');
+    const backToCategories = document.getElementById('back-to-categories');
+    const categoryHub = document.getElementById('category-hub');
+
+    categoryCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const category = card.dataset.category;
+            const subcategory = card.dataset.subcategory;
+
+            categoryHub.classList.add('hidden');
+            galleryGridSection.classList.remove('hidden');
+            backToCategories.classList.remove('hidden');
+
+            loadGalleryImages(category, subcategory);
+        });
+    });
+
+    // Back button returns to category tiles
+    if (backToCategories) {
+        backToCategories.addEventListener('click', () => {
+            categoryHub.classList.remove('hidden');
+            galleryGridSection.classList.add('hidden');
+            backToCategories.classList.add('hidden');
+        });
+    }
+}
+
+// === Legacy Support ===
 function setupCategoryButtons() {
     const categoryButtons = document.querySelectorAll('.category-btn');
-    
     categoryButtons.forEach(button => {
         button.addEventListener('click', function() {
             const category = this.dataset.category;
-            
-            // Update active button
             categoryButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
-            // Show/hide subcategory sections
-            document.querySelectorAll('.subcategory-section').forEach(section => {
-                section.classList.add('hidden');
-            });
-            
+            document.querySelectorAll('.subcategory-section').forEach(section => section.classList.add('hidden'));
             const targetSection = document.getElementById(`${category}-subcategories`);
             if (targetSection) {
                 targetSection.classList.remove('hidden');
-                
-                // Reset subcategory buttons
-                const subcategoryBtns = targetSection.querySelectorAll('.subcategory-btn');
-                subcategoryBtns.forEach(btn => btn.classList.remove('active'));
-                if (subcategoryBtns.length > 0) {
-                    subcategoryBtns[0].classList.add('active');
-                    const firstSubcategory = subcategoryBtns[0].dataset.subcategory;
-                    loadGalleryImages(category, firstSubcategory);
+                const firstSub = targetSection.querySelector('.subcategory-btn');
+                if (firstSub) {
+                    firstSub.classList.add('active');
+                    loadGalleryImages(category, firstSub.dataset.subcategory);
                 }
             }
         });
@@ -208,38 +219,28 @@ function setupCategoryButtons() {
 
 function setupSubcategoryButtons() {
     const subcategoryButtons = document.querySelectorAll('.subcategory-btn');
-    
     subcategoryButtons.forEach(button => {
         button.addEventListener('click', function() {
             const subcategory = this.dataset.subcategory;
-            const activeCategory = document.querySelector('.category-btn.active').dataset.category;
-            
-            // Update active button
-            this.parentElement.querySelectorAll('.subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
+            const activeCategory = document.querySelector('.category-btn.active')?.dataset.category;
+            if (!activeCategory) return;
+            this.parentElement.querySelectorAll('.subcategory-btn').forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
             loadGalleryImages(activeCategory, subcategory);
         });
     });
 }
 
+// === Load Images ===
 function loadGalleryImages(category, subcategory) {
     const imageGrid = document.getElementById('image-grid');
     const loadingState = document.getElementById('loading-state');
-    
     if (!imageGrid || !loadingState) return;
-    
-    // Show loading state
+
     loadingState.style.display = 'block';
     imageGrid.innerHTML = '';
-    
-    // Get images for the selected category and subcategory
-    const images = galleryData[category] && galleryData[category][subcategory] 
-        ? galleryData[category][subcategory] 
-        : [];
-    
+
+    const images = galleryData[category]?.[subcategory] || [];
     if (images.length === 0) {
         setTimeout(() => {
             loadingState.style.display = 'none';
@@ -247,158 +248,91 @@ function loadGalleryImages(category, subcategory) {
         }, 500);
         return;
     }
-    
+
     currentImages = images;
-    
-    // Simulate loading delay for better UX
+
     setTimeout(() => {
         loadingState.style.display = 'none';
         renderGalleryImages(images);
-        imageGrid.classList.add('category-transition');
+        imageGrid.classList.add('loaded');
     }, 800);
 }
 
+// === Render ===
 function renderGalleryImages(images) {
     const imageGrid = document.getElementById('image-grid');
-    
-    imageGrid.innerHTML = images.map((imageSrc, index) => `
+    imageGrid.innerHTML = images.map((src, index) => `
         <div class="gallery-item" onclick="openLightbox(${index})" role="button" tabindex="0" aria-label="View image ${index + 1}">
-            <img src="${imageSrc}" alt="Gallery image ${index + 1}" loading="lazy">
-            <div class="gallery-overlay">
-                <div class="gallery-overlay-text">View Full Size</div>
-            </div>
+            <img src="${src}" alt="Gallery image ${index + 1}" loading="lazy">
         </div>
     `).join('');
-    
-    // Add keyboard event listeners for gallery items
-    const galleryItems = imageGrid.querySelectorAll('.gallery-item');
-    galleryItems.forEach((item, index) => {
-        item.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openLightbox(index);
-            }
-        });
-    });
 }
 
+// === Lightbox ===
 function setupLightbox() {
-    const lightboxModal = document.getElementById('lightbox-modal');
-    const lightboxClose = document.getElementById('lightbox-close');
-    const lightboxPrev = document.getElementById('lightbox-prev');
-    const lightboxNext = document.getElementById('lightbox-next');
-    
-    if (!lightboxModal) return;
-    
-    // Close lightbox
-    lightboxClose?.addEventListener('click', closeLightbox);
-    
-    // Navigation
-    lightboxPrev?.addEventListener('click', previousImage);
-    lightboxNext?.addEventListener('click', nextImage);
-    
-    // Close on background click
-    lightboxModal.addEventListener('click', function(e) {
-        if (e.target === lightboxModal) {
-            closeLightbox();
-        }
+    const modal = document.getElementById('lightbox-modal');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+
+    closeBtn?.addEventListener('click', closeLightbox);
+    prevBtn?.addEventListener('click', previousImage);
+    nextBtn?.addEventListener('click', nextImage);
+
+    modal?.addEventListener('click', e => {
+        if (e.target === modal) closeLightbox();
     });
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
-        if (!lightboxModal.classList.contains('active')) return;
-        
-        switch(e.key) {
-            case 'Escape':
-                closeLightbox();
-                break;
-            case 'ArrowLeft':
-                previousImage();
-                break;
-            case 'ArrowRight':
-                nextImage();
-                break;
-        }
+
+    document.addEventListener('keydown', e => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') previousImage();
+        if (e.key === 'ArrowRight') nextImage();
     });
 }
 
 function openLightbox(index) {
-    const lightboxModal = document.getElementById('lightbox-modal');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxCounter = document.getElementById('lightbox-counter');
-    
-    if (!lightboxModal || !lightboxImage) return;
-    
+    const modal = document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-image');
+    const counter = document.getElementById('lightbox-counter');
+
     currentImageIndex = index;
-    lightboxImage.src = currentImages[index];
-    lightboxImage.alt = `Gallery image ${index + 1} of ${currentImages.length}`;
-    
-    if (lightboxCounter) {
-        lightboxCounter.textContent = `${index + 1} / ${currentImages.length}`;
-    }
-    
-    lightboxModal.classList.add('active');
+    img.src = currentImages[index];
+    img.alt = `Gallery image ${index + 1} of ${currentImages.length}`;
+    counter.textContent = `${index + 1} / ${currentImages.length}`;
+    modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    
-    // Focus management for accessibility
-    lightboxImage.focus();
 }
 
 function closeLightbox() {
-    const lightboxModal = document.getElementById('lightbox-modal');
-    
-    if (lightboxModal) {
-        lightboxModal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+    const modal = document.getElementById('lightbox-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
 }
 
 function previousImage() {
     if (currentImages.length === 0) return;
-    
     currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
     updateLightboxImage();
 }
 
 function nextImage() {
     if (currentImages.length === 0) return;
-    
     currentImageIndex = (currentImageIndex + 1) % currentImages.length;
     updateLightboxImage();
 }
 
 function updateLightboxImage() {
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxCounter = document.getElementById('lightbox-counter');
-    
-    if (lightboxImage && currentImages[currentImageIndex]) {
-        lightboxImage.src = currentImages[currentImageIndex];
-        lightboxImage.alt = `Gallery image ${currentImageIndex + 1} of ${currentImages.length}`;
-    }
-    
-    if (lightboxCounter) {
-        lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
-    }
+    const img = document.getElementById('lightbox-image');
+    const counter = document.getElementById('lightbox-counter');
+    img.src = currentImages[currentImageIndex];
+    counter.textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
 }
 
-// Export gallery functions
-window.Gallery = {
-    openLightbox,
-    closeLightbox,
-    previousImage,
-    nextImage
-};
+// Expose for debugging
+window.Gallery = { openLightbox, closeLightbox, previousImage, nextImage };
 
-/* === OMEDIA: Add-on: accept programmatic category selection ===
-   This is only a safety net. If your existing code listens to .category-btn
-   and .subcategory-btn clicks (which we’re simulating), you may not even need this.
-*/
 window.MMS_selectGallery = function (category, subcategory) {
-  // Try to click the legacy controls (keeps existing code paths)
-  const catBtn = document.querySelector(`.category-btn[data-category="${category}"]`);
-  if (catBtn) catBtn.click();
-
-  const subBtn = document.querySelector(`#${category}-subcategories .subcategory-btn[data-subcategory="${subcategory}"]`);
-  if (subBtn) subBtn.click();
+    const catCard = document.querySelector(`.category-card[data-category="${category}"][data-subcategory="${subcategory}"]`);
+    if (catCard) catCard.click();
 };
-
