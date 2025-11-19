@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moment Maker Studios - Professional Photography in Newcastle</title>
+    <meta name="description" content="Professional photography studio in Newcastle, KwaZulu-Natal. Specializing in weddings, maternity, birthdays, and traditional ceremonies. Book your shoot today!">
+    <meta name="keywords" content="photography, studio, Newcastle, wedding photographer, maternity photos, birthday shoots">
+    <meta property="og:title" content="Moment Maker Studios - Capturing Your Most Precious Moments">
+    <meta property="og:description" content="Professional photography services in Newcastle, KwaZulu-Natal">
+    <meta property="og:image" content="/og-image.jpg">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="snow"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Moment Maker Studios Home">Moment Maker Studios</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <img src="images\hero-studio-session.jpg" alt="Professional photography studio" loading="lazy">
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Capturing Your Most Precious Moments</h1>
+                <p class="hero-subtitle">Professional photography services that tell your unique story with artistry and passion</p>
+                <button class="cta-button primary" onclick="bookShoot()" aria-label="Book your photography session">
+                    Book Your Shoot
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+   <!-- Services Section -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>We specialize in capturing life's most meaningful moments</p>
+        </div>
+        <div class="services-grid">
+            <a href="gallery.html?category=outdoor&subcategory=weddings" 
+               class="service-card service-link wedding-service" 
+               style="background-image: url('images/t/wedding-photography-newcastle-kwazulu-natal-thumbnail-01.jpg'); background-size: cover; background-position: 50% 30%; background-repeat: no-repeat; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.6);">
+                
+                <h3>Wedding Photography</h3>
+                <p>Elegant wedding photography that captures the magic of your special day</p>
+            </a>
+            <a href="gallery.html?category=studio&subcategory=maternity" 
+               class="service-card service-link maternity-service" 
+               style="background-image: url('images/t/maternity-photoshoot-newcastle-kwazulu-natal-thumbnail-01.jpg'); background-size: cover; background-position: 10% 70%; background-repeat: no-repeat; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.6);">
+                
+                <h3>Maternity Shoots</h3>
+                <p>Beautiful maternity photography celebrating this precious time in your life</p>
+            </a>
+            <a href="gallery.html?category=studio&subcategory=kids-birthdays" 
+               class="service-card service-link birthday-service" 
+               style="background-image: url('images/t/birthday-photoshoot-newcastle-kwazulu-natal-thumbnail-01.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.6);">
+                
+                <h3>Birthday Shoots</h3>
+                <p>Fun and creative birthday photography for all ages and celebrations</p>
+            </a>
+            <a href="gallery.html?category=outdoor&subcategory=matric-dance" 
+               class="service-card service-link matric-dance-service" 
+               style="background-image: url('images/t/matric-dance-newcastle-thumbnail.jpg'); background-size: cover; background-position: 50% 32%; background-repeat: no-repeat; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.6);">
+                
+                <h3>Farewells</h3>
+                <p>Immortalize your final year as a student</p>
+            </a>
+            <a href="gallery.html?category=outdoor&subcategory=traditional" 
+               class="service-card service-link traditional-service" 
+               style="background-image: url('images/t/zulu-traditional-wedding-photographer-thumbnail-02.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.6);">
+                
+                <h3>Traditional Ceremonies</h3>
+                <p>Cultural and traditional ceremony photography with respect and artistry</p>
+            </a>
+            <div class="service-card embroidery-service" 
+                 style="background-image: url('images/t/custom-embroidery-services-newcastle-kwazulu-natal-thumbnail-01.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.6);">
+                
+                <h3>Embroidery Services</h3>
+                <p>Custom embroidery services to complement your photography needs</p>
+            </div>
+            <div class="service-card sound-service" 
+                 style="background-image: url('images/t/event-sound-services-newcastle-kwazulu-natal-thumbnail-01.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.6);">
+                
+                <h3>Sound Services</h3>
+                <p>Professional sound recording and audio services for events</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Don't just take our word for it</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"Absolutely amazing work! They captured every precious moment of our wedding day perfectly. The attention to detail was incredible."</blockquote>
+                    <cite>- Melissa Nhema</cite>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"The maternity shoot was such a wonderful experience. Professional, comfortable, and the photos are absolutely beautiful."</blockquote>
+                    <cite>- Andile Mthembu</cite>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"Outstanding service for our son's birthday party. They made the kids feel comfortable and captured such natural, joyful moments."</blockquote>
+                    <cite>- Ayanda Zulu</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to book your session? We'd love to hear from you</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 Location</h3>
+                        <p>33 Allen Street<br>Newcastle, KwaZulu-Natal</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Phone</h3>
+                        <p><a href="tel:0613191038">061 319 1038</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>✉️ Email</h3>
+                        <p><a href="mailto:shepherdmungofa@gmail.com">shepherdmungofa@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🕐 Hours</h3>
+                        <p>Mon–Sat: 08:00–17:00<br>Sun: 10:00–15:00</p>
+                    </div>
+                    <button class="cta-button primary" onclick="bookShoot()">Book Your Shoot Now</button>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.2!2d29.9317!3d-27.7578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef1dd0!2s33%20Allen%20St%2C%20Newcastle%2C%202940%2C%20South%20Africa!5e0!3m2!1sen!2s!4v1654321"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Moment Maker Studios Location">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Moment Maker Studios</h3>
+                    <p>Capturing your most precious moments with artistry and passion</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/momement_maker_studios__" target="_blank" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@momentmakerstudios?_t=ZM-8wXXOaXUsGk&_r=1" target="_blank" aria-label="TikTok">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/p/Moment-Maker-Studios-100070628839239" target="_blank" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <nav>
+                        <a href="index.html">Home</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>33 Allen Street, Newcastle</p>
+                    <p><a href="tel:0613191038">061 319 1038</a></p>
+                    <p><a href="mailto:shepherdmungofa@gmail.com">shepherdmungofa@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Moment Maker Studios. All rights reserved.</p>
+                <p class="designer-credit">Designed by <a href="https://300webdesign.netlify.app//" target="_blank" rel="noopener noreferrer" style="color: #dc2626;">300 Web Design</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/27613191038" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg class="whatsapp-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488z"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/navigation.js"></script>
+</body>
+</html>
